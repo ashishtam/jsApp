@@ -1,6 +1,6 @@
 # js-app
-
-> A JavaScript framwork to get Posts with unit testing
+[![CircleCI](https://circleci.com/gh/ashishtam/jsApp.svg?style=svg)](https://circleci.com/gh/ashishtam/jsApp)
+> A JavaScript framwork to get Posts with unit testing and CircleCI 
 
 ## Build Setup
 
