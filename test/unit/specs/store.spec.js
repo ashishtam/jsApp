@@ -31,7 +31,20 @@ describe('actions', () => {
     actions.getPosts({commit: mockCommit})
       .then(() => {
         expect(count).toBe(2)
+        expect(data[0].title).toEqual('Mock with Jest')
       }).catch(error => console.log(error))
+  })
+
+  it('tests using a mock mutation but real store', () => {
+    store.hotUpdate({
+      mutations: { GET_POSTS: dataMock }
+    })
+
+    return store.dispatch('getPosts')
+      .then((res) => {
+        expect(dataMock.mock.calls[0][1])
+          .toHaveLength(2)
+      })
   })
 
 })
