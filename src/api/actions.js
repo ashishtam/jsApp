@@ -14,7 +14,10 @@ const actions = {
       .then(response => {
         commit(types.GET_POSTS, response.data)
       })
-      .catch(err => console.log(err))
+      .catch(err => {
+        console.log(err)
+        commit(types.GET_POSTS_ERROR)
+      })
   }
 }
 

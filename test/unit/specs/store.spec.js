@@ -35,7 +35,7 @@ describe('actions', () => {
       }).catch(error => console.log(error))
   })
 
-  it('tests using a mock mutation but real api', () => {
+  it('tests using a mock mutation but real store', () => {
     store.hotUpdate({
       mutations: { GET_POSTS: dataMock }
     })
@@ -47,7 +47,7 @@ describe('actions', () => {
       })
   })
 
-  it('tests using a mock axios and full api ', () => {
+  it('tests using a mock axios and full store ', () => {
     return store.dispatch('getPosts')
       .then(() => {
           expect(store.state.data[0])

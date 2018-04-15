@@ -1,7 +1,8 @@
 <template>
   <div>
+    <Alert :message="errorMessage" :show="error"></Alert>
     <el-table
-      :data="$store.state.data"
+      :data="posts"
       stripe
       empty-text="No data available"
       style="width: 100%">
@@ -32,10 +33,32 @@
 </template>
 
 <script>
+  import Alert from './Alert'
   export default {
     name: "Posts",
-    mounted: function () {
+    data () {
+      return {
+        errorMessage: ''
+      }
+    },
+    components: {
+      Alert
+    },
+    created() {
       this.$store.dispatch('getPosts')
+    },
+    computed: {
+      posts() {
+        return this.$store.state.data
+      },
+      error() {
+        if (this.$store.state.errorLoading) {
+          this.errorMessage = this.$store.state.errorMessage
+          return true
+        } else {
+          return false
+        }
+      }
     }
   }
 </script>
