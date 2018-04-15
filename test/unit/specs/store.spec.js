@@ -47,4 +47,16 @@ describe('actions', () => {
       })
   })
 
+  it('tests using a mock axios and full store ', () => {
+    return store.dispatch('getPosts')
+      .then(() => {
+          expect(store.state.data[0])
+            .toEqual({userId: 1, id: 1, title: 'Mock with Jest', body: 'Unit Testing'})
+
+        expect(store.state.data[1])
+          .toEqual({userId: 1, id: 2, title: 'Mock with Jest 2', body: 'Unit Testing'})
+        }
+      )
+  })
+
 })
