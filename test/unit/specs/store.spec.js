@@ -2,8 +2,8 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 Vue.use(Vuex)
 
-import actions from '@/store/actions'
-import mutations from '@/store/mutations'
+import actions from '@/api/actions'
+import mutations from '@/api/mutations'
 
 describe('actions', () => {
   let store
@@ -35,7 +35,7 @@ describe('actions', () => {
       }).catch(error => console.log(error))
   })
 
-  it('tests using a mock mutation but real store', () => {
+  it('tests using a mock mutation but real api', () => {
     store.hotUpdate({
       mutations: { GET_POSTS: dataMock }
     })
@@ -47,7 +47,7 @@ describe('actions', () => {
       })
   })
 
-  it('tests using a mock axios and full store ', () => {
+  it('tests using a mock axios and full api ', () => {
     return store.dispatch('getPosts')
       .then(() => {
           expect(store.state.data[0])
