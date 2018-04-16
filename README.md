@@ -23,6 +23,7 @@ npm test
 - [Vue.JS - JavaScript Framework](https://vuejs.org/)
 - [Vuex - State Management Library](https://vuex.vuejs.org/en/intro.html)
 - [Element-UI - UI framework for Vue.JS](http://element.eleme.io/#/en-US)
+- [Axios](https://github.com/axios/axios)
 - [Jest - JavaScript Testing](https://facebook.github.io/jest/)
 - [CircleCI](https://circleci.com/)
 
